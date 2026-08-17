@@ -8,7 +8,15 @@ export interface WAState {
   } | null
 }
 
-export interface WAMessage {
-  type: 'state'
-  data: WAState
+export interface SentMessage {
+  id: string
+  number: string
+  message: string
+  status: 'sent' | 'failed'
+  error: string | null
+  sentAt: number
 }
+
+export type WAMessage =
+  | { type: 'state'; data: WAState }
+  | { type: 'message'; data: SentMessage }

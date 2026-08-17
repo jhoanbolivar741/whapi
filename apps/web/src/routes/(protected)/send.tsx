@@ -22,7 +22,7 @@ function RouteComponent() {
         message: z.string().min(1, 'El mensaje no puede estar vacío'),
       }),
     },
-    onSubmit: ({ value }) => client.whatsapp.send.post(value),
+    onSubmit: ({ value }) => client.api.whatsapp.send.post(value),
   })
   return (
     <div className="mx-auto max-w-md">
